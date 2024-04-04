@@ -1,0 +1,6 @@
+package-lock.json
+yarn.lock
+eslint.config.js
+node_modules/
+dist/
+public/

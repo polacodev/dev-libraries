@@ -1,0 +1,3 @@
+{
+  "src/**/*.{astro,ts,js,tsx,jsx}": ["prettier --check", "eslint --max-warnings 0"]
+}
