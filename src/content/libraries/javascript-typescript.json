@@ -1,0 +1,30 @@
+{
+  "title": "JavaScript / TypeScript",
+  "description": "JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with first-class functions. \nTypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+  "libraries": [
+    {
+      "libraryTitle": "Lodash",
+      "libraryDescription": "A modern JavaScript utility library delivering modularity, performance & extras",
+      "libraryIcon": "/javascript-typescript/lodash.svg",
+      "libraryURL": "https://lodash.com/"
+    },
+    {
+      "libraryTitle": "MomentJS",
+      "libraryDescription": "Parse, validate, manipulate, and display dates and times in JavaScript",
+      "libraryIcon": "/javascript-typescript/momentjs.svg",
+      "libraryURL": "https://momentjs.com/"
+    },
+    {
+      "libraryTitle": "DayJS",
+      "libraryDescription": "Is a minimalist JavaScript library that parses, validates, manipulates, and displays dates and times for modern browsers with a largely Moment.js-compatible API",
+      "libraryIcon": "/javascript-typescript/chartjs.svg",
+      "libraryURL": "https://day.js.org/"
+    },
+    {
+      "libraryTitle": "UnderscoreJS",
+      "libraryDescription": "Is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects",
+      "libraryIcon": "/javascript-typescript/underscore.svg",
+      "libraryURL": "https://underscorejs.org/"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "title": "Python",
+  "description": "Python is a programming language that lets you work quickly and integrate systems more effectively",
+  "libraries": [
+    {
+      "libraryTitle": "NumPy",
+      "libraryDescription": "Is the fundamental package for N-dimensional arrays, mathematical functions, and numerical computing with Python",
+      "libraryIcon": "/python/numpy.svg",
+      "libraryURL": "https://numpy.org/"
+    },
+    {
+      "libraryTitle": "TensorFlow",
+      "libraryDescription": "Is a free and open-source software library for machine learning and artificial intelligence",
+      "libraryIcon": "/python/tensorflow.svg",
+      "libraryURL": "https://www.tensorflow.org/"
+    },
+    {
+      "libraryTitle": "Pandas",
+      "libraryDescription": "Is a popular open source library for data analysis and manipulation in Python",
+      "libraryIcon": "/python/pandas.svg",
+      "libraryURL": "https://pandas.pydata.org/"
+    },
+    {
+      "libraryTitle": "Pytorch",
+      "libraryDescription": "Is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects",
+      "libraryIcon": "/python/pytorch.svg",
+      "libraryURL": "https://underscorejs.org/"
+    }
+  ]
+}
