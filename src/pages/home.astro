@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import TitlePage from '@components/TitlePage.astro';
+---
+
+<BaseLayout>
+  <div class="flex px-4 pt-4 dark:border-gray-700">
+    <div class="">
+      <TitlePage>Not sure which libraries to use?</TitlePage>
+      <p
+        class="xl:px-32 lg:px-16 md:px-4 sm:px-1 mb-10 xl:text-2xl lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-400"
+      >
+        We decided to join forces to create DevLi with the purpose of facilitating the path for
+        developers in the search for better techniques that will solve problems or needs applicable
+        in projects developed in Javascript, Python, Java, etc.
+      </p>
+      <div
+        class="flex flex-wrap gap-4 items-center justify-center rounded-md border border-[#9ccc16]"
+      >
+        <div class="flex items-center">
+          <span>lodash</span>
+        </div>
+        <div class="flex items-center">
+          <span>Pandas</span>
+        </div>
+        <div class="flex items-center">
+          <span>TensorFlow</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

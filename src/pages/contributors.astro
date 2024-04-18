@@ -1,0 +1,77 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import TitlePage from '@components/TitlePage.astro';
+import { getEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const contributorsContent = await getEntry('contributors', 'contributors');
+---
+
+<BaseLayout>
+  <div class="flex px-4 pt-4 dark:border-gray-700">
+    <div class="">
+      <!-- <TitlePage>Contributors</TitlePage> -->
+      <p
+        class="xl:px-32 lg:px-16 md:px-4 sm:px-1 mb-10 xl:text-2xl lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-400"
+      >
+        Thanks to all the collaborators who have made this project possible!
+      </p>
+      <div class="flex flex-wrap gap-4 items-center justify-center">
+        {
+          contributorsContent.data.contributors.map((contributor: any, index: any) => {
+            return (
+              <div class="flex items-center">
+                <div
+                  class="
+                    before:content-[attr(data-tip)]
+                    before:absolute
+                    before:px-3 before:py-2
+                    before:left-1/2 before:-top-1
+                    before:w-max before:max-w-xs
+                    before:-translate-x-1/2 before:-translate-y-full
+                    before:bg-gray-900/50 before:text-gray-100 text-xs
+                    before:rounded-md before:opacity-0
+                    before:transition-all
+
+                    dark:before:bg-[#9ccc16]/20
+
+                    after:absolute
+                    after:left-1/2 after:-top-1
+                    after:h-0 after:w-0
+                    after:-translate-x-1/2
+                    after:border-4
+                    after:border-t-gray-900/50
+                    after:border-l-transparent
+                    after:border-b-transparent
+                    after:border-r-transparent
+                    after:opacity-0
+                    after:transition-all
+
+                    dark:after:border-t-[#9ccc16]/20
+
+                    hover:before:opacity-100 hover:after:opacity-100 hover:relative
+                    "
+                  data-tip={contributor.contributorName + index}
+                >
+                  <picture>
+                    <Image
+                      src={contributor.contributorImageURL}
+                      alt={contributor.contributorName}
+                      width="56"
+                      height="56"
+                      class="rounded-full"
+                      loading={'eager'}
+                    />
+                    <p class="bg-gray-900/50 opacity-0 text-gray-100 text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full px-3 pointer-events-none">
+                      {contributor.contributorName}
+                    </p>
+                  </picture>
+                </div>
+              </div>
+            );
+          })
+        }
+      </div>
+    </div>
+  </div>
+</BaseLayout>

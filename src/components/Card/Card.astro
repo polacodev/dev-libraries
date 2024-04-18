@@ -1,0 +1,71 @@
+---
+import LinkIcon from '@icons/Link.astro';
+
+interface Props {
+  libraryURL: string;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { libraryURL, icon, description, title } = Astro.props;
+---
+
+<div
+  class="group transition duration-500 rounded-lg border border-gray-300 first
+   dark:border-gray-600 w-full hover:border-[#9ccc16] dark:hover:border-[#9ccc16]"
+>
+  <!-- <div
+  class="group transition duration-500 rounded-lg border border-gray-300 first
+   dark:border-gray-600 h-32 md:h-64 hover:border-[#9ccc16] dark:hover:border-[#9ccc16]"
+> -->
+  <a href={libraryURL} target="_blank" rel="noopener noreferrer">
+    <div class="flex justify-end px-4 pt-4">
+      <LinkIcon />
+    </div>
+    <div class="flex flex-col items-center pb-1">
+      <img
+        class="size-16 mb-3
+        group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
+        src={icon}
+        alt={title}
+      />
+    </div>
+    <h5
+      class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
+        dark:text-white group-hover:text-[#9ccc16]"
+    >
+      {title}
+    </h5>
+    <p class="font-normal text-atlantis-900/95 dark:text-gray-400 px-4 line-clamp-3 pb-6">
+      {description}
+    </p>
+  </a>
+</div>
+
+<!-- <div
+  class="group transition duration-500 rounded-lg border border-gray-300 first 
+   dark:border-gray-600 w-full hover:border-[#9ccc16] dark:hover:border-[#9ccc16]"
+>
+  <a href={libraryURL} target="_blank" rel="noopener noreferrer">
+    <div class="flex justify-end px-4 pt-4">
+      <LinkIcon />
+    </div>
+    <div class="flex flex-col items-center pb-1">
+      <img class="
+        size-16 mb-3
+        group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300
+      "
+      src={icon} alt={title} />
+    </div>
+    <h5
+      class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
+        dark:text-white group-hover:text-[#9ccc16]"
+    >
+      {title}
+    </h5>
+    <p class="font-normal text-atlantis-900/95 dark:text-gray-400 px-4 line-clamp-3">
+      {description}
+    </p>
+  </a>
+</div> -->
