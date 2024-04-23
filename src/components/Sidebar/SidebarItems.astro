@@ -1,0 +1,29 @@
+---
+import type { MenuSidebarItem } from '../../types/sidebar';
+
+interface Props {
+  sidebarItems: MenuSidebarItem[];
+}
+
+const { sidebarItems } = Astro.props;
+---
+
+{
+  sidebarItems.map((sidebarItem) => {
+    return (
+      <li class="aside-nav-bar-container-li">
+        <a
+          href={sidebarItem.path}
+          class:list={`
+            flex items-center p-3 text-base font-medium 
+            text-[#1f1f29] rounded-lg transition 
+            duration-100 dark:text-white hover:bg-[#E5f99d] 
+            dark:hover:bg-[#BAE635] dark:hover:text-[#1f1f29] group
+          `}
+        >
+          <span class="ml-3">{sidebarItem.name}</span>
+        </a>
+      </li>
+    );
+  })
+}
