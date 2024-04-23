@@ -8,10 +8,10 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "format": "prettier --check  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
-    "format:write": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\"",
-    "lint": "eslint \"src/**/*.{js,ts,jsx,tsx,astro}\"",
-    "lint:fix": "eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\"",
+    "format": "prettier src --check",
+    "format:write": "prettier src --write",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix",
     "prepare": "husky"
   },
   "dependencies": {

@@ -15,6 +15,5 @@ export default [
       "astro/jsx-a11y/anchor-is-valid": "warn",
       "@stylistic/ts/indent": "off",
     },
-    ignores: ["config.ts", "env.d.ts"]
   }
 ];
