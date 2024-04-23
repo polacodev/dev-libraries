@@ -4,27 +4,85 @@ import TitlePage from '@/components/TitlePage.astro';
 ---
 
 <BaseLayout>
-  <div class="flex px-4 pt-4 dark:border-gray-700">
-    <div class="">
+  <div class="flex justify-center flex-col px-4 pt-4 dark:border-gray-700">
+    <div>
       <TitlePage>Not sure which libraries to use?</TitlePage>
+      <ul class="list-disc xl:px-32 lg:px-16 md:px-4 sm:px-1 mb-10">
+        <li class="xl:text-lg lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-200">
+          You face a problem, you don't know which library to use?, find the best option to solve
+          the problem you are facing in your project.
+        </li>
+        <li class="xl:text-lg lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-200">
+          Do you have a library or language that you want to add?, follow the guide and do it <a
+            class="underline text-blue-700"
+            href="http://"
+            target="_blank"
+            rel="noopener noreferrer">here</a
+          >.
+        </li>
+      </ul>
       <p
-        class="xl:px-32 lg:px-16 md:px-4 sm:px-1 mb-10 xl:text-2xl lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-400"
+        class="xl:px-32 lg:px-16 md:px-4 sm:px-1 mb-10 xl:text-lg lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-200"
       >
-        We decided to join forces to create DevLi with the purpose of facilitating the path for
-        developers in the search for better techniques that will solve problems or needs applicable
-        in projects developed in Javascript, Python, Java, etc.
+        DevLi is an open-source website, where you can find alternatives to libraries depending on
+        the language you are working in.
       </p>
-      <div
-        class="flex flex-wrap gap-4 items-center justify-center rounded-md border border-[#9ccc16]"
-      >
-        <div class="flex items-center">
-          <span>lodash</span>
+    </div>
+    <div
+      class="max-w-3xl mx-auto flex flex-wrap gap-10 justify-evenly items-center rounded-md border border-[#9ccc16] p-10 dark:bg-[#4B4B4B]"
+    >
+      <div class="flex items-center shadow-2xl dark:bg-gray-200 border rounded-md py-10 px-14">
+        <div>
+          <div class="flex flex-col items-center pb-1">
+            <img
+              class="size-16 mb-3
+                group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
+              src="/javascript-typescript/chartjs.svg"
+              alt=""
+            />
+          </div>
+          <h5
+            class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
+                dark:text-gray-800 group-hover:text-[#9ccc16]"
+          >
+            ChartJS
+          </h5>
         </div>
-        <div class="flex items-center">
-          <span>Pandas</span>
+      </div>
+      <div class="flex items-center shadow-2xl dark:bg-gray-200 border rounded-md py-10 px-14">
+        <div>
+          <div class="flex flex-col items-center pb-1">
+            <img
+              class="size-16 mb-3
+                group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
+              src="/python/numpy.svg"
+              alt=""
+            />
+          </div>
+          <h5
+            class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
+              dark:text-gray-800 group-hover:text-[#9ccc16]"
+          >
+            NumPy
+          </h5>
         </div>
-        <div class="flex items-center">
-          <span>TensorFlow</span>
+      </div>
+      <div class="flex items-center shadow-2xl dark:bg-gray-200 border rounded-md py-10 px-14">
+        <div>
+          <div class="flex flex-col items-center pb-1">
+            <img
+              class="size-16 mb-3
+                group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
+              src="/javascript-typescript/lodash.svg"
+              alt=""
+            />
+          </div>
+          <h5
+            class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
+              dark:text-gray-800 group-hover:text-[#9ccc16]"
+          >
+            Lodash
+          </h5>
         </div>
       </div>
     </div>
