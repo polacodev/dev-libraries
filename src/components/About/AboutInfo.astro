@@ -1,0 +1,15 @@
+---
+interface Props {
+  userName: string;
+  userRole: string;
+}
+
+const { userName, userRole } = Astro.props;
+---
+
+<h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{userName}</h5>
+<span
+  class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#1F2E05] dark:group-hover:text-gray-400"
+>
+  {userRole}
+</span>

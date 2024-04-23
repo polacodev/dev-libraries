@@ -1,0 +1,21 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  userIcon: string;
+  userName: string;
+}
+
+const { userIcon, userName } = Astro.props;
+---
+
+<picture>
+  <Image
+    src={userIcon}
+    alt={userName}
+    width="96"
+    height="96"
+    class="rounded-full"
+    loading={'eager'}
+  />
+</picture>
