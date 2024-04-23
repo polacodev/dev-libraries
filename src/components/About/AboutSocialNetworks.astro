@@ -1,0 +1,24 @@
+---
+import type { SocialNetwork } from '@/types/about';
+
+interface Props {
+  userSocialNetworks: SocialNetwork[];
+}
+
+const { userSocialNetworks } = Astro.props;
+---
+
+{
+  userSocialNetworks.map((media) => {
+    return (
+      <a href={media.link} aria-label={media.mediaName} target="_blank" rel="noopener noreferrer">
+        <button
+          type="button"
+          class="text-gray-800 hover:bg-[#9ccc16] dark:text-white dark:hover:text-gray-800 rounded-lg text-sm p-2.5"
+        >
+          <Fragment set:html={media.svgIcon} />
+        </button>
+      </a>
+    );
+  })
+}

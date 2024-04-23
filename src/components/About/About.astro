@@ -1,0 +1,28 @@
+---
+import type { AboutUser } from '@/types/about';
+import AboutImage from './AboutImage.astro';
+import AboutInfo from './AboutInfo.astro';
+import AboutSocialNetworks from './AboutSocialNetworks.astro';
+
+interface Props {
+  aboutUsers: AboutUser[];
+}
+
+const { aboutUsers } = Astro.props;
+---
+
+{
+  aboutUsers.map((user) => {
+    return (
+      <div class="group w-full max-w-sm border rounded-lg border-gray-300 dark:border-gray-600 hover:border-[#9ccc16] dark:hover:border-[#9ccc16] dark:hover:text-[#9ccc16]">
+        <div class="flex flex-col items-start p-6">
+          <AboutImage userIcon={user.icon} userName={user.name} />
+          <AboutInfo userRole={user.role} userName={user.name} />
+          <div class="flex mt-4 md:mt-2 gap-2">
+            <AboutSocialNetworks userSocialNetworks={user.socialNetworks} />
+          </div>
+        </div>
+      </div>
+    );
+  })
+}
