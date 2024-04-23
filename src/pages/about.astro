@@ -78,11 +78,11 @@ const aboutUser = [
 ---
 
 <BaseLayout>
-  <div class="flex px-4 pt-4 dark:border-gray-700">
+  <div class="flex justify-center flex-col px-4 pt-4 dark:border-gray-700">
     <div>
-      <TitlePage>DevLi</TitlePage>
+      <TitlePage>Dev Libraries</TitlePage>
       <p
-        class="xl:px-32 lg:px-16 md:px-4 sm:px-1 mb-10 xl:text-2xl lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-400"
+        class="xl:px-32 lg:px-16 md:px-4 sm:px-1 mb-10 xl:text-lg lg:text-lg md:text-base sm:text-sm font-normal dark:text-gray-200"
       >
         DevLi is a web site to help the engineers and provide the best options of libraries at the
         moment to work on projects.<br />
@@ -91,50 +91,51 @@ const aboutUser = [
         applicable in projects developed in Javascript, Python, Java, etc.
       </p>
     </div>
-  </div>
-  <div class="flex flex-wrap gap-2 lg:gap-24 md:gap-12 sm:gap-6 justify-center">
-    {
-      aboutUser.map((user) => {
-        return (
-          <div class="group w-full max-w-sm border rounded-lg border-gray-300 dark:border-gray-600 hover:border-[#9ccc16] dark:hover:border-[#9ccc16] dark:hover:text-[#9ccc16]">
-            <div class="flex flex-col items-start p-6">
-              <picture>
-                <Image
-                  src={user.icon}
-                  alt={user.name}
-                  width="96"
-                  height="96"
-                  class="rounded-full"
-                  loading={'eager'}
-                />
-              </picture>
-              <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{user.name}</h5>
-              <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#1F2E05] dark:group-hover:text-gray-400">
-                {user.role}
-              </span>
-              <div class="flex mt-4 md:mt-2 gap-2">
-                {user.socialNetworks.map((media) => {
-                  return (
-                    <a
-                      href={media.link}
-                      aria-label={media.mediaName}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <button
-                        type="button"
-                        class="text-gray-800 hover:bg-[#9ccc16] dark:text-white dark:hover:text-gray-800 rounded-lg text-sm p-2.5"
+    <div class="flex flex-wrap gap-10 justify-center items-center rounded-md p-10">
+      <!-- <div class="flex flex-wrap gap-2 lg:gap-24 md:gap-12 sm:gap-6 justify-center"> -->
+      {
+        aboutUser.map((user) => {
+          return (
+            <div class="group w-full max-w-80  border rounded-lg border-gray-300 hover:border-[#9ccc16] dark:border-[#9ccc16] dark:hover:text-[#9ccc16] dark:bg-[#4B4B4B]">
+              <div class="flex flex-col items-start p-6">
+                <picture>
+                  <Image
+                    src={user.icon}
+                    alt={user.name}
+                    width="96"
+                    height="96"
+                    class="rounded-full"
+                    loading={'eager'}
+                  />
+                </picture>
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">{user.name}</h5>
+                <span class="text-sm text-gray-500 dark:text-gray-400 group-hover:text-[#1F2E05] dark:group-hover:text-gray-400">
+                  {user.role}
+                </span>
+                <div class="flex mt-4 md:mt-2 gap-2">
+                  {user.socialNetworks.map((media) => {
+                    return (
+                      <a
+                        href={media.link}
+                        aria-label={media.mediaName}
+                        target="_blank"
+                        rel="noopener noreferrer"
                       >
-                        <Fragment set:html={media.svgIcon} />
-                      </button>
-                    </a>
-                  );
-                })}
+                        <button
+                          type="button"
+                          class="text-gray-800 hover:bg-[#9ccc16] dark:text-white dark:hover:text-gray-800 rounded-lg text-sm p-2.5"
+                        >
+                          <Fragment set:html={media.svgIcon} />
+                        </button>
+                      </a>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
-        );
-      })
-    }
+          );
+        })
+      }
+    </div>
   </div>
 </BaseLayout>
