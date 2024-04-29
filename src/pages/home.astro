@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import TitlePage from '@/components/TitlePage.astro';
+import { HOME_ITEMS } from '@/contants/home';
 ---
 
 <BaseLayout>
@@ -31,60 +32,30 @@ import TitlePage from '@/components/TitlePage.astro';
     <div
       class="max-w-3xl mx-auto flex flex-wrap gap-10 justify-evenly items-center rounded-md border border-[#9ccc16] p-10 dark:bg-[#4B4B4B]"
     >
-      <div class="flex items-center shadow-2xl dark:bg-gray-200 border rounded-md py-10 px-14">
-        <div>
-          <div class="flex flex-col items-center pb-1">
-            <img
-              class="size-16 mb-3
-                group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
-              src="/javascript-typescript/chartjs.svg"
-              alt=""
-            />
-          </div>
-          <h5
-            class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
-                dark:text-gray-800 group-hover:text-[#9ccc16]"
-          >
-            ChartJS
-          </h5>
-        </div>
-      </div>
-      <div class="flex items-center shadow-2xl dark:bg-gray-200 border rounded-md py-10 px-14">
-        <div>
-          <div class="flex flex-col items-center pb-1">
-            <img
-              class="size-16 mb-3
-                group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
-              src="/python/numpy.svg"
-              alt=""
-            />
-          </div>
-          <h5
-            class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
-              dark:text-gray-800 group-hover:text-[#9ccc16]"
-          >
-            NumPy
-          </h5>
-        </div>
-      </div>
-      <div class="flex items-center shadow-2xl dark:bg-gray-200 border rounded-md py-10 px-14">
-        <div>
-          <div class="flex flex-col items-center pb-1">
-            <img
-              class="size-16 mb-3
-                group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
-              src="/javascript-typescript/lodash.svg"
-              alt=""
-            />
-          </div>
-          <h5
-            class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
-              dark:text-gray-800 group-hover:text-[#9ccc16]"
-          >
-            Lodash
-          </h5>
-        </div>
-      </div>
+      {
+        HOME_ITEMS.map((homeItem) => {
+          return (
+            <div class="group flex items-center shadow-2xl dark:bg-gray-200 border rounded-md py-10 px-14">
+              <div>
+                <div class="flex flex-col items-center pb-1">
+                  <img
+                    class="size-16 mb-3
+                      group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
+                    src={homeItem.image}
+                    alt=""
+                  />
+                </div>
+                <h5
+                  class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
+                  dark:text-gray-800 group-hover:text-[#9ccc16]"
+                >
+                  {homeItem.name}
+                </h5>
+              </div>
+            </div>
+          );
+        })
+      }
     </div>
   </div>
 </BaseLayout>
