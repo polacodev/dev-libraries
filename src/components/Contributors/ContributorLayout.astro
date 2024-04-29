@@ -1,0 +1,44 @@
+---
+interface Props {
+  tip: string;
+}
+
+const { tip } = Astro.props;
+---
+
+<div class="flex items-center">
+  <div
+    class={`
+      before:content-[attr(data-tip)]
+      before:absolute
+      before:px-3 before:py-2
+      before:left-1/2 before:-top-1
+      before:w-max before:max-w-xs
+      before:-translate-x-1/2 before:-translate-y-full
+      before:bg-gray-900/50 before:text-gray-100 text-xs
+      before:rounded-md before:opacity-0
+      before:transition-all
+
+      dark:before:bg-[#9ccc16]/20
+
+      after:absolute
+      after:left-1/2 after:-top-1
+      after:h-0 after:w-0
+      after:-translate-x-1/2
+      after:border-4
+      after:border-t-gray-900/50
+      after:border-l-transparent
+      after:border-b-transparent
+      after:border-r-transparent
+      after:opacity-0
+      after:transition-all
+
+      dark:after:border-t-[#9ccc16]/20
+
+      hover:before:opacity-100 hover:after:opacity-100 hover:relative
+    `}
+    data-tip={tip}
+  >
+    <slot />
+  </div>
+</div>

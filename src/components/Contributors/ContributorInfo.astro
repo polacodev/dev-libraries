@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+
+interface Props {
+  contributorImageURL: string;
+  contributorName: string;
+}
+
+const { contributorImageURL, contributorName } = Astro.props;
+---
+
+<picture>
+  <Image
+    src={contributorImageURL}
+    alt={contributorName}
+    width="56"
+    height="56"
+    class="rounded-full"
+    loading={'eager'}
+  />
+  <p
+    class="bg-gray-900/50 opacity-0 text-gray-100 text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full px-3 pointer-events-none"
+  >
+    {contributorName}
+  </p>
+</picture>
