@@ -14,7 +14,7 @@ const { userSocialNetworks } = Astro.props;
       <a href={media.link} aria-label={media.mediaName} target="_blank" rel="noopener noreferrer">
         <button
           type="button"
-          class="text-gray-800 hover:bg-[#9ccc16] dark:text-white dark:hover:text-gray-800 rounded-lg text-sm p-2.5"
+          class="text-dark-secondary hover:bg-green-light-primary dark:text-light-secondary dark:hover:text-dark-secondary rounded-lg text-sm p-2.5"
         >
           <Fragment set:html={media.svgIcon} />
         </button>

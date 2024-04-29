@@ -14,12 +14,7 @@ const { sidebarItems } = Astro.props;
       <li class="aside-nav-bar-container-li">
         <a
           href={sidebarItem.path}
-          class:list={`
-            flex items-center p-3 text-base font-medium 
-            text-[#1f1f29] rounded-lg transition 
-            duration-100 dark:text-white hover:bg-[#E5f99d] 
-            dark:hover:bg-[#BAE635] dark:hover:text-[#1f1f29] group
-          `}
+          class="flex items-center p-3 text-base font-medium text-light-paragraph rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-dark-primary dark:hover:text-light-paragraph group"
         >
           <span class="ml-3">{sidebarItem.name}</span>
         </a>

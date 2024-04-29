@@ -14,7 +14,7 @@ const { aboutUsers } = Astro.props;
 {
   aboutUsers.map((user) => {
     return (
-      <div class="group w-full max-w-sm border rounded-lg border-gray-300 dark:border-gray-600 hover:border-[#9ccc16] dark:hover:border-[#9ccc16] dark:hover:text-[#9ccc16]">
+      <div class="group w-full max-w-sm border rounded-lg border-light-border dark:border-dark-border hover:border-green-light-primary dark:hover:border-green-light-primary dark:hover:text-green-light-primary">
         <div class="flex flex-col items-start p-6">
           <AboutImage userIcon={user.icon} userName={user.name} />
           <AboutInfo userRole={user.role} userName={user.name} />

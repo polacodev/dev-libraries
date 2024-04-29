@@ -4,27 +4,27 @@ import SidebarItems from './SidebarItems.astro';
 import { MENU_SIDEBAR } from '@/constants/sidebar';
 ---
 
-<div class="antialiased bg-gray-50 dark:bg-gray-900">
+<div class="antialiased bg-light-primary dark:bg-dark-primary">
   <Header />
 
   <!-- Sidebar -->
   <aside
-    class="fixed top-0 left-0 z-40 w-96 h-screen pt-14 transition-transform -translate-x-full bg-white border-r border-gray-200 md:translate-x-0 dark:border-gray-700"
+    class="fixed top-0 left-0 z-40 w-96 h-screen pt-14 transition-transform -translate-x-full bg-light-secondary border-r border-dark-paragraph md:translate-x-0 dark:border-dark-tertiary"
     aria-label="Sidenav"
     id="drawer-navigation"
   >
-    <div class="overflow-y-auto py-8 px-8 h-full bg-white dark:bg-gray-800">
+    <div class="overflow-y-auto py-8 px-8 h-full bg-light-secondary dark:bg-dark-secondary">
       <ul class="side-bar-ul-top space-y-2">
         <SidebarItems sidebarItems={MENU_SIDEBAR} />
       </ul>
       <div class="absolute bottom-0 left-0 w-96 p-8">
         <ul
-          class="side-bar-ul-bottom pt-5 mt-5 space-y-2 border-t border-gray-200 dark:border-gray-700"
+          class="side-bar-ul-bottom pt-5 mt-5 space-y-2 border-t border-dark-paragraph dark:border-dark-tertiary"
         >
           <li>
             <a
               href="/contributors"
-              class="flex items-center p-3 text-base font-medium text-gray-900 rounded-lg transition duration-100 dark:text-white hover:bg-[#E5f99d] dark:hover:bg-[#BAE635] dark:hover:text-gray-800 group"
+              class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary group"
             >
               <svg
                 class="size-6"
@@ -46,7 +46,7 @@ import { MENU_SIDEBAR } from '@/constants/sidebar';
           <li>
             <a
               href="/about"
-              class="flex items-center p-3 text-base font-medium text-gray-900 rounded-lg transition duration-100 dark:text-white hover:bg-[#E5f99d] dark:hover:bg-[#BAE635] dark:hover:text-gray-800 group"
+              class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary group"
             >
               <svg
                 class="size-6"
