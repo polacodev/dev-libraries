@@ -1,7 +1,7 @@
 ---
-import type { ContributorsContent } from '@/types/contributors';
+import type { ContributorsContent } from '@/types/contributors.type';
 import ContributorInfo from './ContributorInfo.astro';
-import ContributorLayout from './ContributorLayout.astro';
+import ContributorContainer from './ContributorContainer.astro';
 
 interface Props {
   contributorsContent: ContributorsContent;
@@ -13,12 +13,14 @@ const { contributorsContent } = Astro.props;
 {
   contributorsContent.data.contributors.map((contributor) => {
     return (
-      <ContributorLayout tip={contributor.contributorName}>
-        <ContributorInfo
-          contributorImageURL={contributor.contributorImageURL}
-          contributorName={contributor.contributorName}
-        />
-      </ContributorLayout>
+      <a href={contributor.contributorGithubURL} target="_blank" rel="noopener noreferrer">
+        <ContributorContainer tip={contributor.contributorName}>
+          <ContributorInfo
+            contributorImageURL={contributor.contributorImageURL}
+            contributorName={contributor.contributorName}
+          />
+        </ContributorContainer>
+      </a>
     );
   })
 }

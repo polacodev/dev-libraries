@@ -1,6 +1,7 @@
 interface Contributors {
   contributorName: string;
   contributorImageURL: string;
+  contributorGithubURL: string;
 }
 
 export interface ContributorsContent {

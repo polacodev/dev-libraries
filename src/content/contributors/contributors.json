@@ -4,19 +4,23 @@
   "contributors": [
     {
       "contributorName": "MarcoBaltazar",
-      "contributorImageURL": "https://avatars.githubusercontent.com/u/158519820?s=400&u=3600dbffa81b44fc57d7e7e29a156e21da029c69&v=4"
+      "contributorImageURL": "https://avatars.githubusercontent.com/u/158519820?s=400&u=3600dbffa81b44fc57d7e7e29a156e21da029c69&v=4",
+      "contributorGithubURL": "https://github.com/polacodev"
     },
     {
       "contributorName": "GerardoEscalante",
-      "contributorImageURL": "https://mir-s3-cdn-cf.behance.net/user/115/f45c83559958743.65d6435d2e2c7.jpg"
+      "contributorImageURL": "https://mir-s3-cdn-cf.behance.net/user/115/f45c83559958743.65d6435d2e2c7.jpg",
+      "contributorGithubURL": "https://www.behance.net/gerardoescalan"
     },
     {
       "contributorName": "DiegoSivila",
-      "contributorImageURL": "https://avatars.githubusercontent.com/u/158519820?s=400&u=3600dbffa81b44fc57d7e7e29a156e21da029c69&v=4"
+      "contributorImageURL": "https://avatars.githubusercontent.com/u/158519820?s=400&u=3600dbffa81b44fc57d7e7e29a156e21da029c69&v=4",
+      "contributorGithubURL": "https://www.linkedin.com/in/diego-fernando-sivila-ram%C3%ADrez-9a4bb710b"
     },
     {
       "contributorName": "RaulCatalinas",
-      "contributorImageURL": "https://avatars.githubusercontent.com/u/105791463?s=400&u=73bf2d0983f64de34e2ad54007ef248885558849&v=4"
+      "contributorImageURL": "https://avatars.githubusercontent.com/u/105791463?s=400&u=73bf2d0983f64de34e2ad54007ef248885558849&v=4",
+      "contributorGithubURL": "https://github.com/RaulCatalinas"
     }
   ]
 }

@@ -25,6 +25,7 @@ const contributorCollection = defineCollection({
       z.object({
         contributorName: z.string(),
         contributorImageURL: z.string().url(),
+        contributorGithubURL: z.string().url(),
       }),
     ),
   }),
