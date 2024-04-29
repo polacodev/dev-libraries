@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import ImagePage from '../ImagePage.astro';
 
 interface Props {
   contributorImageURL: string;
@@ -9,18 +9,14 @@ interface Props {
 const { contributorImageURL, contributorName } = Astro.props;
 ---
 
-<picture>
-  <Image
-    src={contributorImageURL}
-    alt={contributorName}
-    width="56"
-    height="56"
-    class="rounded-full"
-    loading={'eager'}
-  />
-  <p
-    class="bg-dark-primary/50 opacity-0 text-dark-paragraph text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full px-3 pointer-events-none"
-  >
-    {contributorName}
-  </p>
-</picture>
+<ImagePage
+  imageSrc={contributorImageURL}
+  imageAlt={contributorName}
+  imageSize={56}
+  imageClass="rounded-full"
+/>
+<p
+  class="bg-dark-primary/50 opacity-0 text-dark-paragraph text-center text-xs rounded-lg py-2 absolute z-10 group-hover:opacity-100 bottom-full px-3 pointer-events-none"
+>
+  {contributorName}
+</p>

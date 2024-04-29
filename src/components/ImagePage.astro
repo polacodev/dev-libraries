@@ -1,0 +1,23 @@
+---
+import { Image, imageConfig } from 'astro:assets';
+
+interface Props {
+  imageSrc: string;
+  imageAlt: string;
+  imageSize: number;
+  imageClass: string;
+}
+
+const { imageSrc, imageAlt, imageSize, imageClass } = Astro.props;
+---
+
+<picture>
+  <Image
+    src={imageSrc}
+    alt={imageAlt}
+    width={imageSize}
+    height={imageSize}
+    class={imageClass}
+    loading={'eager'}
+  />
+</picture>

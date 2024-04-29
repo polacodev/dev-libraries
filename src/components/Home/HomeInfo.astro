@@ -1,4 +1,6 @@
 ---
+import ImagePage from '../ImagePage.astro';
+
 interface Props {
   image: string;
   name: string;
@@ -9,11 +11,11 @@ const { image, name } = Astro.props;
 
 <div>
   <div class="flex flex-col items-center pb-1">
-    <img
-      class="size-16 mb-3
-        group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
-      src={image}
-      alt={name}
+    <ImagePage
+      imageSrc={image}
+      imageAlt={name}
+      imageSize={65}
+      imageClass="mb-3 group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
     />
   </div>
   <h5

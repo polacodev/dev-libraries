@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import ImagePage from '../ImagePage.astro';
 import AboutSocialNetworks from './AboutSocialNetworks.astro';
 import type { SocialNetwork } from '@/types/about.type';
 
@@ -13,16 +13,7 @@ interface Props {
 const { userIcon, userName, userRole, socialNetworks } = Astro.props;
 ---
 
-<picture>
-  <Image
-    src={userIcon}
-    alt={userName}
-    width="96"
-    height="96"
-    class="rounded-full"
-    loading={'eager'}
-  />
-</picture>
+<ImagePage imageSrc={userIcon} imageAlt={userName} imageSize={96} imageClass="rounded-full" />
 <h5 class="mb-1 text-xl font-medium text-dark-primary dark:text-light-secondary">{userName}</h5>
 <span
   class="text-sm text-dark-subtitle dark:text-dark-subtitle group-hover:text-light-paragraph dark:group-hover:text-dark-subtitle"
