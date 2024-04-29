@@ -1,4 +1,4 @@
-import { type MenuSidebarItem } from '@/types/sidebar';
+import { type MenuSidebarItem } from '@/types/sidebar.type';
 
 export const MENU_SIDEBAR: MenuSidebarItem[] = [
   {

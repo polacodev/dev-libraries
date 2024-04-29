@@ -1,4 +1,4 @@
-import type { AboutUser } from '@/types/about';
+import type { AboutUser } from '@/types/about.type';
 
 export const ABOUT_USERS: AboutUser[] = [
   {

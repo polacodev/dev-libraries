@@ -1,15 +1,34 @@
 ---
+import { Image } from 'astro:assets';
+import AboutSocialNetworks from './AboutSocialNetworks.astro';
+import type { SocialNetwork } from '@/types/about.type';
+
 interface Props {
+  userIcon: string;
   userName: string;
   userRole: string;
+  socialNetworks: SocialNetwork[];
 }
 
-const { userName, userRole } = Astro.props;
+const { userIcon, userName, userRole, socialNetworks } = Astro.props;
 ---
 
+<picture>
+  <Image
+    src={userIcon}
+    alt={userName}
+    width="96"
+    height="96"
+    class="rounded-full"
+    loading={'eager'}
+  />
+</picture>
 <h5 class="mb-1 text-xl font-medium text-dark-primary dark:text-light-secondary">{userName}</h5>
 <span
   class="text-sm text-dark-subtitle dark:text-dark-subtitle group-hover:text-light-paragraph dark:group-hover:text-dark-subtitle"
 >
   {userRole}
 </span>
+<div class="flex mt-4 md:mt-2 gap-2">
+  <AboutSocialNetworks userSocialNetworks={socialNetworks} />
+</div>

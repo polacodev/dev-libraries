@@ -1,0 +1,20 @@
+---
+import HomeInfo from './HomeInfo.astro';
+import type { HomeItem } from '@/types/home.type';
+
+interface Props {
+  homeItems: HomeItem[];
+}
+
+const { homeItems } = Astro.props;
+---
+
+{
+  homeItems.map((homeItem) => {
+    return (
+      <div class="group flex items-center shadow-2xl dark:bg-dark-paragraph border border-dark-paragraph rounded-md py-10 px-14">
+        <HomeInfo image={homeItem.image} name={homeItem.name} />
+      </div>
+    );
+  })
+}
