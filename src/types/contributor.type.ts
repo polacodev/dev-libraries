@@ -1,4 +1,4 @@
-interface Contributors {
+interface Contributor {
   contributorName: string;
   contributorImageURL: string;
   contributorGithubURL: string;
@@ -8,7 +8,7 @@ export interface ContributorsContent {
   id: 'contributors';
   collection: 'contributors';
   data: {
-    contributors: Contributors[];
+    contributors: Contributor[];
     title: string;
     description: string;
   };
