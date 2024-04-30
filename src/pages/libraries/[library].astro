@@ -1,15 +1,10 @@
 ---
-import LibraryComponent from '@/components/Library/Library.astro';
-import Empty from '@/components/Empty.astro';
+import LibraryCard from '@/components/Library/LibraryCard.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { getEntry } from 'astro:content';
 
 export function getStaticPaths() {
-  return [
-    { params: { library: 'python' } },
-    { params: { library: 'javascript-typescript' } },
-    { params: { library: 'java' } },
-  ];
+  return [{ params: { library: 'python' } }, { params: { library: 'javascript-typescript' } }];
 }
 
 const { library } = Astro.params;
@@ -18,13 +13,18 @@ const librariesContent = await getEntry('libraries', library);
 ---
 
 <BaseLayout>
-  {
-    librariesContent?.data.libraries.length > 0 ? (
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-4">
-        <LibraryComponent librariesContent={librariesContent} />
-      </div>
-    ) : (
-      <Empty />
-    )
-  }
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-4">
+    {
+      librariesContent?.data.libraries.map((library) => {
+        return (
+          <LibraryCard
+            libraryURL={library.libraryURL}
+            libraryIcon={library.libraryIcon}
+            libraryTitle={library.libraryTitle}
+            libraryDescription={library.libraryDescription}
+          />
+        );
+      })
+    }
+  </div>
 </BaseLayout>

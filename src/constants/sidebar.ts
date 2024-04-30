@@ -11,9 +11,4 @@ export const MENU_SIDEBAR: MenuSidebarItem[] = [
     name: 'JavaScript / TypeScript',
     path: '/libraries/javascript-typescript',
   },
-  {
-    id: 'Java',
-    name: 'Java',
-    path: '/libraries/java',
-  },
 ];
