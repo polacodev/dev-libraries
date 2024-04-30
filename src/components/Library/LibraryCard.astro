@@ -4,12 +4,12 @@ import LinkIcon from '@/icons/Link.astro';
 
 interface Props {
   libraryURL: string;
-  icon: string;
-  title: string;
-  description: string;
+  libraryIcon: string;
+  libraryTitle: string;
+  libraryDescription: string;
 }
 
-const { libraryURL, icon, description, title } = Astro.props;
+const { libraryURL, libraryIcon, libraryTitle, libraryDescription } = Astro.props;
 ---
 
 <div
@@ -22,8 +22,8 @@ const { libraryURL, icon, description, title } = Astro.props;
     </div>
     <div class="flex flex-col items-center pb-1">
       <ImagePage
-        imageSrc={icon}
-        imageAlt={title}
+        imageSrc={libraryIcon}
+        imageAlt={libraryTitle}
         imageSize={64}
         imageClass="mb-3 group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
       />
@@ -32,10 +32,10 @@ const { libraryURL, icon, description, title } = Astro.props;
       class="mb-2 text-center text-2xl font-bold tracking-tight text-atlantis-900/95
         dark:text-light-secondary group-hover:text-green-light-primary"
     >
-      {title}
+      {libraryTitle}
     </h5>
     <p class="font-normal dark:text-light-border px-4 line-clamp-3 pb-6">
-      {description}
+      {libraryDescription}
     </p>
   </a>
 </div>

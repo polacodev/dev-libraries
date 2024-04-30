@@ -1,0 +1,24 @@
+---
+import LibraryCard from './LibraryCard.astro';
+import Empty from '@/components/Empty.astro';
+import type { LibrariesContent } from '@/types/library.type';
+
+interface Props {
+  librariesContent: LibrariesContent;
+}
+
+const { librariesContent } = Astro.props;
+---
+
+{
+  librariesContent.data.libraries.map((library) => {
+    return (
+      <LibraryCard
+        libraryURL={library.libraryURL}
+        libraryIcon={library.libraryIcon}
+        libraryTitle={library.libraryTitle}
+        libraryDescription={library.libraryDescription}
+      />
+    );
+  })
+}
