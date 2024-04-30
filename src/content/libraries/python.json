@@ -24,7 +24,7 @@
       "libraryTitle": "Pytorch",
       "libraryDescription": "Is a JavaScript library that provides a whole mess of useful functional programming helpers without extending any built-in objects",
       "libraryIcon": "/python/pytorch.svg",
-      "libraryURL": "https://underscorejs.org/"
+      "libraryURL": "https://pytorch.org/"
     }
   ]
 }

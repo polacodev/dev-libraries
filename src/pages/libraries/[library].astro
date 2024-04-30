@@ -5,8 +5,8 @@ import { getEntry } from 'astro:content';
 
 export function getStaticPaths() {
   return [
-    { params: { library: 'javascript-typescript' } },
     { params: { library: 'python' } },
+    { params: { library: 'javascript-typescript' } },
     { params: { library: 'java' } },
   ];
 }
