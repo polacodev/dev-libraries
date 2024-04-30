@@ -1,6 +1,6 @@
 {
   "title": "Python",
-  "description": "Python is a programming language that lets you work quickly and integrate systems more effectively",
+  "description": "Python is a multi-paradigm programming language. Object-oriented programming and structured programming are fully supported, and many of their features support functional programming and aspect-oriented programming.",
   "libraries": [
     {
       "libraryTitle": "NumPy",

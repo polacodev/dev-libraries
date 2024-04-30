@@ -1,6 +1,6 @@
 {
   "title": "JavaScript / TypeScript",
-  "description": "JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with first-class functions. \nTypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
+  "description": "JavaScript (JS) is a lightweight interpreted (or just-in-time compiled) programming language with first-class functions. TypeScript is a strongly typed programming language that builds on JavaScript, giving you better tooling at any scale.",
   "libraries": [
     {
       "libraryTitle": "Lodash",
