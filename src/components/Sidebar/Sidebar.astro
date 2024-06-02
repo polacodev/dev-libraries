@@ -34,7 +34,7 @@ import { MENU_SIDEBAR } from '@/constants/sidebar';
         <li>
           <a
             href="/contributors"
-            class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
+            class="flex items-center p-3 text-base font-medium text-light-title rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
           >
             <ContributorsIcon />
             <span class="ml-3">Contributors</span>
@@ -43,7 +43,7 @@ import { MENU_SIDEBAR } from '@/constants/sidebar';
         <li>
           <a
             href="/about"
-            class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
+            class="flex items-center p-3 text-base font-medium text-light-title rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
           >
             <AboutIcon />
             <span class="ml-3">About</span>
@@ -124,5 +124,11 @@ import { MENU_SIDEBAR } from '@/constants/sidebar';
     /* --tw-text-opacity: 1; */
     /* color: rgb(17 24 39 / var(--tw-text-opacity)); */
     color: #1f1f29;
+
+    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
+      0 4px 6px -4px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
+      var(--tw-shadow);
   }
 </style>
