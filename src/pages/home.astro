@@ -1,19 +1,8 @@
 ---
-import BaseLayout from '@/layouts/BaseLayout.astro';
-import HomeDescription from '@/components/Home/HomeDescription.astro';
-import HomeComponent from '@/components/Home/Home.astro';
-import { HOME_ITEMS } from '@/constants/home';
+import LayoutSideBar from '@/layouts/LayoutSideBar.astro';
+import HomeLibraries from '@/components/Home/Home.astro';
 ---
 
-<BaseLayout>
-  <div class="flex justify-center flex-col px-4 pt-4">
-    <div>
-      <HomeDescription />
-    </div>
-    <div
-      class="max-w-3xl mx-auto flex flex-wrap gap-10 justify-evenly items-center rounded-md border border-green-light-primary p-10 dark:bg-dark-home-card"
-    >
-      <HomeComponent homeItems={HOME_ITEMS} />
-    </div>
-  </div>
-</BaseLayout>
+<LayoutSideBar>
+  <HomeLibraries />
+</LayoutSideBar>

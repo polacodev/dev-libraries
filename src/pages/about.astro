@@ -1,15 +1,9 @@
 ---
+import LayoutSideBar from '@/layouts/LayoutSideBar.astro';
 import AboutComponent from '@/components/About/About.astro';
-import AboutDescription from '@/components/About/AboutDescription.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
 import { ABOUT_USERS } from '@/constants/about';
 ---
 
-<BaseLayout>
-  <div class="flex px-4 pt-4 dark:border-dark-tertiary">
-    <AboutDescription />
-  </div>
-  <div class="flex flex-wrap gap-2 lg:gap-24 md:gap-12 sm:gap-6 justify-center">
-    <AboutComponent aboutUsers={ABOUT_USERS} />
-  </div>
-</BaseLayout>
+<LayoutSideBar>
+  <AboutComponent aboutUsers={ABOUT_USERS} />
+</LayoutSideBar>

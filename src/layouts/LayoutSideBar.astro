@@ -1,0 +1,19 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Sidebar from '@/components/Sidebar/Sidebar.astro';
+import Header from '@/components/Header/Header.astro';
+---
+
+<BaseLayout>
+  <Header />
+  <Sidebar />
+
+  <div class="flex pt-16 overflow-hidden bg-gray-50 dark:bg-gray-900">
+    <div
+      id="main-content"
+      class="relative w-full h-full overflow-y-auto bg-gray-50 lg:ml-72 dark:bg-gray-900 min-h-screen"
+    >
+      <slot />
+    </div>
+  </div>
+</BaseLayout>

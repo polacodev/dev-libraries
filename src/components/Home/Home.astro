@@ -1,20 +1,25 @@
 ---
+import HomeDescription from '@/components/Home/HomeDescription.astro';
 import HomeInfo from './HomeInfo.astro';
 import type { HomeItem } from '@/types/home.type';
-
-interface Props {
-  homeItems: HomeItem[];
-}
-
-const { homeItems } = Astro.props;
+import { HOME_ITEMS } from '@/constants/home';
 ---
 
-{
-  homeItems.map((homeItem) => {
-    return (
-      <div class="group flex items-center shadow-2xl dark:bg-dark-paragraph border border-dark-paragraph rounded-md py-10 px-14">
-        <HomeInfo image={homeItem.image} name={homeItem.name} />
-      </div>
-    );
-  })
-}
+<div class="flex justify-center flex-col lg:px-4 px-8 pt-6">
+  <div>
+    <HomeDescription />
+  </div>
+  <div
+    class="max-w-3xl mx-auto flex flex-wrap gap-10 justify-evenly items-center rounded-md border border-green-light-primary p-10 dark:bg-dark-home-card"
+  >
+    {
+      HOME_ITEMS.map((homeItem: HomeItem) => {
+        return (
+          <div class="group flex items-center shadow-2xl dark:bg-dark-paragraph border border-dark-paragraph rounded-md py-10 px-14">
+            <HomeInfo image={homeItem.image} name={homeItem.name} />
+          </div>
+        );
+      })
+    }
+  </div>
+</div>

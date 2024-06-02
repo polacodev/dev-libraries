@@ -1,51 +1,60 @@
 ---
-import Header from '../Header/Header.astro';
 import SidebarItems from './SidebarItems.astro';
 import AboutIcon from '@/icons/About.astro';
 import ContributorsIcon from '@/icons/Contributors.astro';
 import { MENU_SIDEBAR } from '@/constants/sidebar';
 ---
 
-<div class="antialiased bg-light-primary dark:bg-dark-primary">
-  <Header />
-
-  <aside
-    class="fixed top-0 left-0 z-40 w-96 h-screen pt-14 transition-transform -translate-x-full bg-light-secondary border-r border-dark-paragraph md:translate-x-0 dark:border-dark-tertiary"
-    aria-label="Sidenav"
-    id="drawer-navigation"
+<aside
+  id="sidebar"
+  class="fixed top-0 left-0 z-20 flex flex-col flex-shrink-0 hidden w-72 h-full pt-16 font-normal duration-75 lg:flex transition-width"
+  aria-label="Sidebar"
+>
+  <div
+    class="relative flex flex-col flex-1 min-h-0 pt-0 bg-white border-r border-gray-200 dark:bg-gray-800 dark:border-gray-700"
   >
-    <div class="overflow-y-auto py-8 px-8 h-full bg-light-secondary dark:bg-dark-secondary">
-      <SidebarItems sidebarItems={MENU_SIDEBAR} />
-      <div class="absolute bottom-0 left-0 w-96 p-8">
-        <ul
-          class="side-bar-ul-bottom pt-5 mt-5 space-y-2 border-t border-dark-paragraph dark:border-dark-tertiary"
-        >
-          <li>
-            <a
-              href="/contributors"
-              class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
-            >
-              <ContributorsIcon />
-              <span class="ml-3">Contributors</span>
-            </a>
-          </li>
-          <li>
-            <a
-              href="/about"
-              class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
-            >
-              <AboutIcon />
-              <span class="ml-3">About</span>
-            </a>
-          </li>
-        </ul>
+    <div
+      class:list={[
+        'flex flex-col flex-1 pt-5 pb-28 overflow-y-auto',
+        'scrollbar scrollbar-w-2 scrollbar-thumb-rounded-[0.1667rem]',
+        'scrollbar-thumb-slate-200 scrollbar-track-gray-400',
+        'dark:scrollbar-thumb-slate-900 dark:scrollbar-track-gray-800',
+      ]}
+    >
+      <div
+        class="flex-1 px-3 space-y-1 bg-white divide-y divide-gray-200 dark:bg-gray-800 dark:divide-gray-700"
+      >
+        <SidebarItems sidebarItems={MENU_SIDEBAR} />
       </div>
     </div>
-  </aside>
+    <div class="absolute bottom-0 left-0 w-72 p-3">
+      <ul
+        class="side-bar-ul-bottom pt-5 mt-5 space-y-2 border-t border-dark-paragraph dark:border-dark-tertiary"
+      >
+        <li>
+          <a
+            href="/contributors"
+            class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
+          >
+            <ContributorsIcon />
+            <span class="ml-3">Contributors</span>
+          </a>
+        </li>
+        <li>
+          <a
+            href="/about"
+            class="flex items-center p-3 text-base font-medium text-dark-primary rounded-lg transition duration-100 dark:text-light-secondary hover:bg-green-light-secondary dark:hover:bg-green-dark-primary dark:hover:text-dark-secondary"
+          >
+            <AboutIcon />
+            <span class="ml-3">About</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</aside>
 
-  <main class="relative lg:px-12 md:px-8 sm:px-6 px-4 lg:pt-28 md:pt-14 sm:pt-7 pt-20 md:ml-96">
-    <slot />
-  </main>
+<div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90" id="sidebarBackdrop">
 </div>
 
 <!--Set active class on nav when the page is active -->
@@ -58,6 +67,55 @@ import { MENU_SIDEBAR } from '@/constants/sidebar';
       link.classList.add('active');
     }
   });
+
+  const sidebar = document.getElementById('sidebar');
+
+  if (sidebar) {
+    const toggleSidebarMobile = (
+      sidebar: HTMLElement,
+      sidebarBackdrop: HTMLElement,
+      toggleSidebarMobileHamburger: HTMLElement,
+      toggleSidebarMobileClose: HTMLElement,
+    ) => {
+      sidebar.classList.toggle('hidden');
+      sidebarBackdrop.classList.toggle('hidden');
+      toggleSidebarMobileHamburger.classList.toggle('hidden');
+      toggleSidebarMobileClose.classList.toggle('hidden');
+    };
+
+    const toggleSidebarMobileEl = document.getElementById('toggleSidebarMobile');
+    const sidebarBackdrop = document.getElementById('sidebarBackdrop')!;
+    const toggleSidebarMobileHamburger = document.getElementById('toggleSidebarMobileHamburger')!;
+    const toggleSidebarMobileClose = document.getElementById('toggleSidebarMobileClose')!;
+    const toggleSidebarMobileSearch = document.getElementById('toggleSidebarMobileSearch')!;
+
+    toggleSidebarMobileSearch?.addEventListener('click', () => {
+      toggleSidebarMobile(
+        sidebar,
+        sidebarBackdrop,
+        toggleSidebarMobileHamburger,
+        toggleSidebarMobileClose,
+      );
+    });
+
+    toggleSidebarMobileEl?.addEventListener('click', () => {
+      toggleSidebarMobile(
+        sidebar,
+        sidebarBackdrop,
+        toggleSidebarMobileHamburger,
+        toggleSidebarMobileClose,
+      );
+    });
+
+    sidebarBackdrop?.addEventListener('click', () => {
+      toggleSidebarMobile(
+        sidebar,
+        sidebarBackdrop,
+        toggleSidebarMobileHamburger,
+        toggleSidebarMobileClose,
+      );
+    });
+  }
 </script>
 
 <style>

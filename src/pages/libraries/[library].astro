@@ -1,6 +1,6 @@
 ---
 import LibraryCard from '@/components/Library/LibraryCard.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import LayoutSideBar from '@/layouts/LayoutSideBar.astro';
 import { getEntry } from 'astro:content';
 
 export function getStaticPaths() {
@@ -12,8 +12,8 @@ const { library } = Astro.params;
 const librariesContent = await getEntry('libraries', library);
 ---
 
-<BaseLayout>
-  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 mb-4">
+<LayoutSideBar>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 pt-6">
     {
       librariesContent?.data.libraries.map((library) => {
         return (
@@ -27,4 +27,4 @@ const librariesContent = await getEntry('libraries', library);
       })
     }
   </div>
-</BaseLayout>
+</LayoutSideBar>

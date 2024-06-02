@@ -1,63 +1,76 @@
 ---
 import DarkModeToggle from '../DarkModeToggle.astro';
 import HamburguerIcon from '@/icons/Hamburguer.astro';
+import CloseIcon from '@/icons/Close.astro';
 import GithubIcon from '@/icons/Github.astro';
 import SearchIcon from '@/icons/Search.astro';
 import DevLiIcon from '@/icons/DevLi.astro';
-import CloseIcon from '@/icons/Close.astro';
 ---
 
 <nav
-  class="bg-light-secondary border-b border-dark-paragraph px-4 py-2.5 dark:bg-dark-secondary dark:border-dark-tertiary fixed left-0 right-0 top-0 z-50"
+  class="fixed z-30 w-full bg-white border-b border-gray-200 dark:bg-gray-800 dark:border-gray-700"
 >
-  <div class="flex flex-wrap justify-between items-center px-8">
-    <div class="flex justify-start items-center">
-      <button
-        class="p-2 mr-2 text-dark-border rounded-lg cursor-pointer md:hidden hover:text-dark-primary hover:bg-dark-paragraph focus:bg-dark-paragraph dark:focus:bg-dark-tertiary focus:ring-2 focus:ring-dark-paragraph dark:focus:ring-dark-tertiary dark:text-dark-subtitle dark:hover:bg-dark-tertiary dark:hover:text-light-secondary"
-      >
-        <HamburguerIcon />
-        <CloseIcon />
-        <span class="sr-only">Toggle sidebar</span>
-      </button>
-      <a href="/" class="flex items-center justify-between mr-4">
-        <DevLiIcon class="size-10 mr-3" />
-        <span
-          class="self-center text-2xl font-semibold whitespace-nowrap text-green-light-primary dark:text-green-dark-primary"
-          >Dev<span class="text-dark-secondary dark:text-light-secondary">Li</span></span
-        >
-      </a>
-    </div>
-    <div class="flex items-center lg:order-2 gap-4">
-      <form action="#" method="GET" class="hidden md:block md:pl-2">
-        <label for="topbar-search" class="sr-only">Search</label>
-        <div class="relative md:w-96">
-          <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
-            <SearchIcon />
-          </div>
-          <input
-            disabled="true"
-            type="text"
-            name="email"
-            id="topbar-search"
-            class="bg-light-primary border border-light-border text-dark-primary text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-dark-tertiary dark:border-dark-border dark:placeholder-dark-subtitle dark:text-light-secondary dark:focus:ring-primary-500 dark:focus:border-primary-500"
-            placeholder="Search(coming soon)"
-          />
-        </div>
-      </form>
-      <a
-        href="https://github.com/polacodev/dev-libraries"
-        aria-label="polaco github"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+  <div class="px-3 py-3 lg:px-5 lg:pl-3 mx-3">
+    <div class="flex items-center justify-between">
+      <!-- HOME and SEARCH -->
+      <div class="flex items-center justify-start">
         <button
-          type="button"
-          class="text-dark-secondary hover:bg-green-dark-primary dark:text-light-secondary dark:hover:text-dark-secondary rounded-lg text-sm p-2.5"
+          id="toggleSidebarMobile"
+          aria-expanded="true"
+          aria-controls="sidebar"
+          class="p-2 text-gray-600 rounded cursor-pointer lg:hidden hover:text-gray-900 hover:bg-gray-100 focus:bg-gray-100 dark:focus:bg-gray-700 focus:ring-2 focus:ring-gray-100 dark:focus:ring-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white"
         >
-          <GithubIcon />
+          <HamburguerIcon />
+          <CloseIcon />
         </button>
-      </a>
-      <DarkModeToggle />
+        <a href="/" class="flex ml-3 md:mr-24">
+          <DevLiIcon class="size-10 mr-3" />
+          <span
+            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap text-green-light-primary dark:text-green-dark-primary"
+            >Dev</span
+          ><span
+            class="self-center text-xl font-semibold sm:text-2xl whitespace-nowrap dark:text-white"
+            >Li</span
+          >
+        </a>
+      </div>
+      <div class="flex items-center lg:order-2 gap-4">
+        <!-- <SearchInput /> -->
+        <form action="#" method="GET" class="hidden md:block md:pl-2">
+          <label for="topbar-search" class="sr-only">Search</label>
+          <div class="relative md:w-96">
+            <div class="flex absolute inset-y-0 left-0 items-center pl-3 pointer-events-none">
+              <SearchIcon />
+            </div>
+            <input
+              disabled="true"
+              type="text"
+              name="email"
+              id="topbar-search"
+              class="bg-light-primary border border-light-border text-dark-primary text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full pl-10 p-2.5 dark:bg-dark-tertiary dark:border-dark-border dark:placeholder-dark-subtitle dark:text-light-secondary dark:focus:ring-primary-500 dark:focus:border-primary-500"
+              placeholder="Search(coming soon)"
+            />
+          </div>
+        </form>
+
+        <!-- GITHUB BUTTON -->
+        <a
+          href="https://github.com/polacodev/dev-libraries"
+          aria-label="polaco github"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <button
+            type="button"
+            class="text-dark-secondary hover:bg-green-dark-primary dark:text-light-secondary dark:hover:text-dark-secondary rounded-lg text-sm p-2.5"
+          >
+            <GithubIcon />
+          </button>
+        </a>
+
+        <!-- TOGGLE BUTTON -->
+        <DarkModeToggle />
+      </div>
     </div>
   </div>
 </nav>

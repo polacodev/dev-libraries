@@ -1,19 +1,19 @@
 ---
 import ContributorsComponent from '@/components/Contributors/Contributors.astro';
 import ContributorsDescription from '@/components/Contributors/ContributorsDescription.astro';
-import BaseLayout from '@/layouts/BaseLayout.astro';
+import LayoutSideBar from '@/layouts/LayoutSideBar.astro';
 import { getEntry } from 'astro:content';
 
 const contributorsContent = await getEntry('contributors', 'contributors');
 ---
 
-<BaseLayout>
-  <div class="flex px-4 pt-4 dark:border-dark-tertiary">
-    <div class="">
+<LayoutSideBar>
+  <div class="flex lg:px-4 px-8 pt-6 dark:border-dark-tertiary">
+    <div class="xl:px-32 lg:px-16 md:px-4 sm:px-1">
       <ContributorsDescription />
       <div class="flex flex-wrap gap-4 items-center justify-center">
         <ContributorsComponent contributorsContent={contributorsContent} />
       </div>
     </div>
   </div>
-</BaseLayout>
+</LayoutSideBar>
