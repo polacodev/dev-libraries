@@ -1,4 +1,5 @@
 ---
+import ToolTip from '../ToolTip.astro';
 import ImagePage from '../ImagePage.astro';
 import LinkIcon from '@/icons/Link.astro';
 
@@ -13,29 +14,34 @@ const { libraryURL, libraryIcon, libraryTitle, libraryDescription } = Astro.prop
 ---
 
 <div
-  class="group transition duration-500 rounded-lg border border-light-border first
-   dark:border-dark-border w-full hover:border-green-light-primary dark:hover:border-green-light-primary"
+  class="group transition duration-500 rounded-lg border border-light-border first max-w-prose
+dark:border-dark-border w-full hover:border-green-light-primary dark:hover:border-green-light-primary
+size-52"
 >
-  <a href={libraryURL} target="_blank" rel="noopener noreferrer">
-    <div class="flex justify-end px-4 pt-4">
-      <LinkIcon />
-    </div>
-    <div class="flex flex-col items-center pb-1">
-      <ImagePage
-        imageSrc={libraryIcon}
-        imageAlt={libraryTitle}
-        imageSize={64}
-        imageClass="mb-3 group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300"
-      />
-    </div>
-    <h5
-      class="mb-2 text-center text-2xl font-bold tracking-tight text-light-title
+  <ToolTip tip={libraryDescription}>
+    <a href={libraryURL} target="_blank" rel="noopener noreferrer">
+      <div class="flex justify-end px-4 pt-4">
+        <LinkIcon />
+      </div>
+      <div class="flex flex-col items-center pb-1">
+        <ImagePage
+          imageSrc={libraryIcon}
+          imageAlt={libraryTitle}
+          imageSize={64}
+          imageClass="mb-3 group-hover:transition group-hover:ease-in-out group-hover:delay-75 hover:-translate-y-1 group-hover:scale-125 group-hover:duration-300 size-16"
+        />
+      </div>
+      <h5
+        class="mb-2 text-center text-2xl font-bold tracking-tight text-light-title
         dark:text-light-secondary group-hover:text-green-light-primary"
-    >
-      {libraryTitle}
-    </h5>
-    <p class="font-normal text-light-paragraph dark:text-light-border px-4 line-clamp-3 pb-6">
-      {libraryDescription}
-    </p>
-  </a>
+      >
+        {libraryTitle}
+      </h5>
+      <p
+        class="text-justify font-normal text-light-paragraph dark:text-light-border px-4 pb-6 truncate"
+      >
+        {libraryDescription}
+      </p>
+    </a>
+  </ToolTip>
 </div>

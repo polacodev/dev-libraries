@@ -1,6 +1,6 @@
 ---
 import ContributorInfo from './ContributorInfo.astro';
-import ContributorContainer from './ContributorContainer.astro';
+import ToolTip from '../ToolTip.astro';
 import type { ContributorsContent } from '@/types/contributor.type';
 
 interface Props {
@@ -14,12 +14,12 @@ const { contributorsContent } = Astro.props;
   contributorsContent.data.contributors.map((contributor) => {
     return (
       <a href={contributor.contributorGithubURL} target="_blank" rel="noopener noreferrer">
-        <ContributorContainer tip={contributor.contributorName}>
+        <ToolTip tip={contributor.contributorName}>
           <ContributorInfo
             contributorImageURL={contributor.contributorImageURL}
             contributorName={contributor.contributorName}
           />
-        </ContributorContainer>
+        </ToolTip>
       </a>
     );
   })
