@@ -57,17 +57,7 @@ import { MENU_SIDEBAR } from '@/constants/sidebar';
 <div class="fixed inset-0 z-10 hidden bg-gray-900/50 dark:bg-gray-900/90" id="sidebarBackdrop">
 </div>
 
-<!--Set active class on nav when the page is active -->
 <script>
-  const nav2 = document.querySelector('.side-bar-ul-bottom');
-  const navLinks2 = nav2?.querySelectorAll('a');
-  const currentURL2 = window.location.href;
-  navLinks2?.forEach((link) => {
-    if (link.href === currentURL2) {
-      link.classList.add('active');
-    }
-  });
-
   const sidebar = document.getElementById('sidebar');
 
   if (sidebar) {
@@ -117,18 +107,3 @@ import { MENU_SIDEBAR } from '@/constants/sidebar';
     });
   }
 </script>
-
-<style>
-  .side-bar-ul-bottom a.active {
-    background: #9ccc16;
-    /* --tw-text-opacity: 1; */
-    /* color: rgb(17 24 39 / var(--tw-text-opacity)); */
-    color: #1f1f29;
-
-    --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-    --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color),
-      0 4px 6px -4px var(--tw-shadow-color);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000),
-      var(--tw-shadow);
-  }
-</style>
