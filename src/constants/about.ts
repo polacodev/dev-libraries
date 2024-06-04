@@ -52,7 +52,7 @@ export const ABOUT_USERS: AboutUser[] = [
     ],
   },
   {
-    icon: 'https://example.com/readyplayerone.jpg',
+    icon: 'https://avatars.githubusercontent.com/u/50189749?v=4%22',
     name: 'Diego Sivila',
     role: 'QA Engineer',
     socialNetworks: [
