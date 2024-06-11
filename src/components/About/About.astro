@@ -14,12 +14,12 @@ const { aboutUsers } = Astro.props;
   <div class="flex dark:border-dark-tertiary">
     <AboutDescription />
   </div>
-  <div class="flex flex-wrap gap-2 lg:gap-24 md:gap-12 sm:gap-6 justify-center">
+  <div class="flex flex-wrap gap-2 justify-center">
     {
       aboutUsers.map((user) => {
         return (
-          <div class="group w-full max-w-sm border rounded-lg border-light-border hover:border-green-light-primary dark:border-green-light-primary dark:hover:text-green-light-primary dark:bg-dark-home-card">
-            <div class="flex flex-col items-start p-6">
+          <div class="group w-full max-w-xs border rounded-lg border-light-border hover:border-green-light-primary dark:border-green-light-primary dark:hover:text-green-light-primary dark:bg-dark-home-card">
+            <div class="flex flex-col items-start px-6 pt-6 pb-3">
               <AboutInfo
                 userIcon={user.icon}
                 userRole={user.role}
