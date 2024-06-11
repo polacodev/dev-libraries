@@ -2,7 +2,7 @@
 
 ### 1. Description
 
-**`Dev Libraries`** is an **`open-source`** project, where you can find alternatives to libraries depending on the language you are working in. A web site to help the developers and provide the best options of libraries at the moment to work on projects.
+**`Dev Libraries`** is an **`open-source`** project https://www.devlibraries.dev/, where you can find alternatives to libraries depending on the language you are working in. A web site to help the developers and provide the best options of libraries at the moment to work on projects.
 
 We decided to join forces to create DevLi with the purpose of facilitating the path for developers in the search for better techniques that will solve problems or needs applicable in projects developed in Javascript, Python, etc.
 
@@ -34,7 +34,7 @@ npm start dev
 - Do you like **`dark`** or **`light`** mode?, you can toggle between these options and use the best user experience for you.
 - On the left side of the page you will see all the resources for each **`programming Language`**, e.g. **`Python`**.
 - Choose a language and choose the best library for your project.
-- If you want to know who made this project possible, go to **`About`** and **`Contributors`** for more details.
+- If you want to know who made this project possible, go to **`Contributors`** for more details.
 
 ### 4. Contributors
 
@@ -51,7 +51,6 @@ npm start dev
 - [![Eslint](https://img.shields.io/badge/eslint-3A33D1?style=for-the-badge&logo=eslint&logoColor=white)](https://eslint.org/)
 - [![Prettier](https://img.shields.io/badge/prettier-1A2C34?style=for-the-badge&logo=prettier&logoColor=F7BA3E)](https://prettier.io/)
 - [![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=Cloudflare&logoColor=white)](https://www.cloudflare.com/)
-- [![CloudflarePages](https://img.shields.io/badge/Cloudflare%20Pages-F38020?style=for-the-badge&logo=Cloudflare%20Pages&logoColor=white)](https://pages.cloudflare.com/)
 
 ### 6. License
 
