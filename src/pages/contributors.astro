@@ -1,19 +1,20 @@
 ---
 import ContributorsComponent from '@/components/Contributors/Contributors.astro';
 import ContributorsDescription from '@/components/Contributors/ContributorsDescription.astro';
+import AboutComponent from '@/components/About/About.astro';
 import LayoutSideBar from '@/layouts/LayoutSideBar.astro';
+import { ABOUT_USERS } from '@/constants/about';
 import { getEntry } from 'astro:content';
 
 const contributorsContent = await getEntry('contributors', 'contributors');
 ---
 
 <LayoutSideBar>
-  <div class="flex lg:px-4 px-8 pt-6 dark:border-dark-tertiary">
-    <div class="xl:px-32 lg:px-16 md:px-4 sm:px-1">
-      <ContributorsDescription />
-      <div class="flex flex-wrap gap-4 items-center justify-center">
-        <ContributorsComponent contributorsContent={contributorsContent} />
-      </div>
-    </div>
+  <AboutComponent aboutUsers={ABOUT_USERS} />
+  <div class="flex justify-center lg:px-4 px-8 pt-6 dark:border-dark-tertiary">
+    <ContributorsDescription />
+  </div>
+  <div class="flex flex-wrap justify-center lg:px-10 px-6 gap-4 dark:border-dark-tertiary">
+    <ContributorsComponent contributorsContent={contributorsContent} />
   </div>
 </LayoutSideBar>
