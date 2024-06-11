@@ -28,7 +28,7 @@ npm start dev
 
 ### 3. How To Use the Project
 
-- Go to [devlibraries](https://devlibraries.pages.dev) on your favorite browser.
+- Go to [devlibraries](https://www.devlibraries.dev/) on your favorite browser.
 - In the main ribbon there is a search panel which is not yet available, we are working to provide the community with the best user experience.
 - Feel free to hit the **`Github`** button to explore the **`open-source`** project.
 - Do you like **`dark`** or **`light`** mode?, you can toggle between these options and use the best user experience for you.
