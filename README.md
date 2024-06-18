@@ -1,6 +1,6 @@
 # Dev Libraries
 
-![devli](https://github.com/polacodev/dev-libraries/assets/158519820/f566e77b-1324-493f-b98d-0ac6548855be)
+![devli-min](https://github.com/polacodev/dev-libraries/assets/158519820/7d8616fa-e187-4119-8609-1682f792f0a4)
 
 ### 1. Description
 
